@@ -6,8 +6,8 @@ let spheres = [];
 
 // Colors from CSS variables (hardcoded here for JS access)
 const colors = [
-    'rgba(255, 100, 100, 0.6)', // Red-ish
-    'rgba(100, 100, 255, 0.6)', // Blue-ish
+    'rgba(149, 255, 100, 0.6)', // Red-ish
+    'rgba(149, 255, 100, 0.6)', // Blue-ish
     'rgba(100, 255, 100, 0.6)'  // Green-ish
 ];
 
@@ -18,8 +18,8 @@ class Sphere {
         this.radius = radius;
         this.color = color;
         // Random velocity
-        this.dx = (Math.random() - 0.5) * 1.5; 
-        this.dy = (Math.random() - 0.5) * 1.5;
+        this.dx = (Math.random() - 0.5) * 4;
+        this.dy = (Math.random() - 0.5) * 4;
     }
 
     draw() {
@@ -27,7 +27,7 @@ class Sphere {
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
         ctx.fillStyle = this.color;
         // Apply blur effect directly on the context for this shape
-        ctx.filter = 'blur(80px)'; 
+        ctx.filter = 'blur(80px)';
         ctx.fill();
         ctx.filter = 'none'; // Reset filter
         ctx.closePath();

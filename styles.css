@@ -2,23 +2,12 @@
     --bg-color: #ffffff;
     --text-color: #333;
     /* Sphere colors are now used in JS, but keeping variables if needed for other things */
-    --sphere-color-1: rgba(255, 100, 100, 0.6);
-    --sphere-color-2: rgba(100, 100, 255, 0.6);
-    --sphere-color-3: rgba(100, 255, 100, 0.6);
+    --sphere-color-1: rgba(165, 245, 95, 0.6);
+    --sphere-color-2: rgba(119, 255, 91, 0.6);
+    --sphere-color-3: rgba(131, 220, 131, 0.6);
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Inter', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    overflow-x: hidden;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+/* Canvas Background */
 
 #bg-canvas {
     position: fixed;
@@ -27,21 +16,108 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1;
+    background: var(--bg-color);
 }
 
-/* Card Styles */
-.card {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(20px);
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    padding: 2rem;
-    max-width: 400px;
+/* Navbar Fixe */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    z-index: 1;
-    animation: fadeInUp 0.8s ease-out forwards;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    background: linear-gradient(135deg, #8df368, #ffef0f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: linear-gradient(135deg, #8df368, #ffef0f);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: #000;
+}
+
+/* Contenu Principal */
+.main-content {
+    padding-top: 100px;
+    /* Pour compenser la navbar fixe */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-card {
+    text-align: center;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    animation: scaleIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s forwards;
     opacity: 0;
-    /* Start hidden */
+    transform: scale(0.5);
+}
+
+@keyframes scaleIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 @keyframes fadeInUp {
@@ -56,37 +132,9 @@ body {
     }
 }
 
-.panel.meta {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
 .avatar {
     border-radius: 50%;
-    border: 4px solid white;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    animation: scaleIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s forwards;
-    opacity: 0;
-    transform: scale(0.5);
-}
-
-@keyframes scaleIn {
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-.company-logo {
-    position: absolute;
-    margin-left: -30px;
-    margin-top: 90px;
-    border-radius: 50%;
-    background: white;
-    padding: 2px;
-    animation: scaleIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s forwards;
-    opacity: 0;
-    transform: scale(0);
+    margin-bottom: 1rem;
 }
 
 .name {
@@ -106,6 +154,15 @@ body {
     letter-spacing: 1px;
     animation: fadeInUp 0.6s ease-out 0.7s forwards;
     opacity: 0;
+}
+
+.panel.info {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-top: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 .skillz {

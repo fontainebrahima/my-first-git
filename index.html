@@ -1,35 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fontaine Brahima - Architect Web</title>
+  <title>Diarrassouba Brahima - Architect Web</title>
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+  <!-- Canvas pour le background animé -->
   <canvas id="bg-canvas"></canvas>
 
-  <section class="card">
-    <figure class="panel meta">
+  <!-- Navigation Bar Fixe -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">DB</div>
+      <ul class="nav-links">
+        <li><a href="#home">Accueil</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#about">À Propos</a></li>
+        <li><a href="#contact">Me Contacter</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Contenu Principal -->
+  <section class="main-content">
+    <figure class="profile-card">
       <picture>
         <img class="avatar"
           src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/67516/Screen_Shot_2015-11-18_at_11.47.23_AM.png" width="128"
-          height="128" />
+          height="128" alt="Avatar" />
         <img class="company-logo" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/67516/b-01.png" alt="BigglesCodes"
           width="40" height="40" />
       </picture>
       <figcaption>
-
-        <h1 class="name">Fontaine Brahima</h1>
+        <h1 class="name">Diarrassouba Brahima</h1>
         <h3 class="title">architect web</h3>
       </figcaption>
     </figure>
 
     <div class="panel info">
-      <dl class="skillz">
+      <!-- <dl class="skillz">
         <dt>CSS</dt>
         <dd>98</dd>
         <dt>Javascript</dt>
@@ -38,7 +51,7 @@
         <dd>28</dd>
         <dt>Ruby</dt>
         <dd>32</dd>
-      </dl>
+      </dl> -->
 
       <ul class="social">
         <li><a class="icon-social-twitter" href="https://twitter.com/bigglesrocks">Twitter</a></li>
@@ -47,9 +60,7 @@
         </li>
         <li><a class="icon-social-dribbble" href="https://dribbble.com/biggles">Dribbble</a></li>
       </ul>
-
     </div>
-
   </section>
 
   <script src="background.js"></script>
