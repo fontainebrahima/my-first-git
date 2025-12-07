@@ -1,8 +1,8 @@
 :root {
-    --bg-color: #ffffff;
+    --bg-color: #ffffffe7;
     --text-color: #333;
     /* Sphere colors are now used in JS, but keeping variables if needed for other things */
-    --sphere-color-1: rgba(165, 245, 95, 0.6);
+    --sphere-color-1: rgba(164, 250, 89, 0.6);
     --sphere-color-2: rgba(119, 255, 91, 0.6);
     --sphere-color-3: rgba(131, 220, 131, 0.6);
 }
@@ -40,6 +40,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 }
 
 .logo {
@@ -135,21 +136,37 @@ body {
 .avatar {
     border-radius: 50%;
     margin-bottom: 1rem;
+    object-fit: cover;
 }
 
 .name {
-    margin: 1rem 0 0.5rem;
-    font-size: 1.5rem;
-    font-weight: 700;
+    color: #20a3297b;
+    margin: 1rem 0 1rem;
+    font-size: 2.5rem;
+    font-weight: 900;
     animation: fadeInUp 0.6s ease-out 0.6s forwards;
     opacity: 0;
+    text-shadow: 5px 7px rgba(23, 23, 23, 0.1);
+    ;
+}
+
+.namePresente {
+
+    color: #87878bb1;
+    margin: 1rem 0 2rem;
+    font-size: 2.2rem;
+    font-weight: 900;
+    animation: fadeInUp 0.6s ease-out 0.6s forwards;
+    opacity: 0;
+    text-shadow: 5px 7px rgba(23, 23, 23, 0.1);
+    ;
 }
 
 .title {
     margin: 0;
     font-size: 1rem;
-    color: #666;
-    font-weight: 400;
+    color: #a29e9e;
+    font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
     animation: fadeInUp 0.6s ease-out 0.7s forwards;
